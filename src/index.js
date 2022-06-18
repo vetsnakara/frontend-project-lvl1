@@ -13,6 +13,8 @@ function runGame(game) {
   let correctAnswersCount = 0;
 
   while (correctAnswersCount < MAX_CORRECT_ANSWERS_COUNT) {
+    game.initQuestion();
+
     console.log(`Question: ${game.getQuestion()}`);
     const answer = getUserInput(`Your answer: `);
 

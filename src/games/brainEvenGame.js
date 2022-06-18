@@ -1,26 +1,38 @@
 import { getRandomNumber, isNumberEven } from '../cli.js';
 
-const game = {
-  guessNumber: null,
+const game = (function () {
+  let guessNumber = null;
+  let correctAnswer = null;
 
-  printGameTitle() {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  },
+  return {
+    printGameTitle() {
+      console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    },
 
-  getQuestion() {
-    this.guessNumber = getRandomNumber();
-    return this.guessNumber;
-  },
+    initQuestion() {
+      guessNumber = getRandomNumber();
+      correctAnswer = calcCorrectAnswer(guessNumber);
+    },
 
-  getCorrectAnswer() {
-    const isEven = isNumberEven(this.guessNumber);
+    getQuestion() {
+      return guessNumber;
+    },
+
+    getCorrectAnswer() {
+      return correctAnswer;
+    },
+
+    checkAnswer(answer) {
+      return answer === correctAnswer;
+    },
+  };
+
+  // Functions
+  // ............................
+  function calcCorrectAnswer(number) {
+    const isEven = isNumberEven(number);
     return isEven ? 'yes' : 'no';
-  },
-
-  checkAnswer(answer) {
-    const correctAnswer = this.getCorrectAnswer();
-    return answer === correctAnswer;
-  },
-};
+  }
+})();
 
 export default game;
