@@ -25,10 +25,10 @@ function runGame(game) {
       correctAnswersCount += 1;
     } else {
       console.log(
-        `'${answer}' is wrong ;(. Correct answer was '${game.getCorrectAnswer()}'`
+        `'${answer}' is wrong answer ;(. Correct answer was '${game.getCorrectAnswer()}'.`
       );
-      // reset correct answers
-      correctAnswersCount = 0;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
   }
 
