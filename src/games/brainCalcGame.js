@@ -3,7 +3,20 @@ import { getRandomNumber } from '../cli.js';
 
 const OPERATIONS = ['+', '-', '*'];
 
-const game = (function () {
+function calc(a, b, op) {
+  switch (op) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      throw new Error('Unexpected operation');
+  }
+}
+
+const game = (function init() {
   let operandA = null;
   let operandB = null;
   let operation = null;
@@ -33,21 +46,6 @@ const game = (function () {
       return Number(answer) === correctAnswer;
     },
   };
-
-  // Functions
-  // ...........................
-  function calc(a, b, op) {
-    switch (op) {
-      case '+':
-        return a + b;
-      case '-':
-        return a - b;
-      case '*':
-        return a * b;
-      default:
-        throw new Error('Unexpected operation');
-    }
-  }
-})();
+}());
 
 export default game;

@@ -1,14 +1,14 @@
 import _ from 'lodash';
 import { isPrime } from '../cli.js';
 
-const game = (function () {
+const game = (function init() {
   let number = null;
   let correctAnswer = null;
 
   return {
     printGameTitle() {
       console.log(
-        'Answer "yes" if given number is prime. Otherwise answer "no".'
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
       );
     },
 
@@ -29,6 +29,6 @@ const game = (function () {
       return answer === correctAnswer;
     },
   };
-})();
+}());
 
 export default game;

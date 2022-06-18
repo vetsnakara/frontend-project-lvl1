@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const game = (function () {
+const game = (function init() {
   let progression = null;
   let index = null;
   let correctAnswer = null;
@@ -35,6 +35,6 @@ const game = (function () {
       return Number(answer) === correctAnswer;
     },
   };
-})();
+}());
 
 export default game;

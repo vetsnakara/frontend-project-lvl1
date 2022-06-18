@@ -17,7 +17,10 @@ export function greet() {
   console.log(`Hello, ${name}!`);
 }
 
-export function gcd(a, b) {
+export function gcd(n1, n2) {
+  let a = n1;
+  let b = n2;
+
   while (a !== 0 && b !== 0) {
     if (a > b) {
       a %= b;

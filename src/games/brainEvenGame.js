@@ -1,6 +1,11 @@
 import { getRandomNumber, isNumberEven } from '../cli.js';
 
-const game = (function () {
+function calcCorrectAnswer(number) {
+  const isEven = isNumberEven(number);
+  return isEven ? 'yes' : 'no';
+}
+
+const game = (function init() {
   let guessNumber = null;
   let correctAnswer = null;
 
@@ -26,13 +31,6 @@ const game = (function () {
       return answer === correctAnswer;
     },
   };
-
-  // Functions
-  // ............................
-  function calcCorrectAnswer(number) {
-    const isEven = isNumberEven(number);
-    return isEven ? 'yes' : 'no';
-  }
-})();
+}());
 
 export default game;

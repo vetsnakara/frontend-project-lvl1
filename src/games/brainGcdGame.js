@@ -1,6 +1,6 @@
 import { getRandomNumber, gcd } from '../cli.js';
 
-const game = (function () {
+const game = (function init() {
   let a = null;
   let b = null;
   let correctAnswer = null;
@@ -28,6 +28,6 @@ const game = (function () {
       return Number(answer) === correctAnswer;
     },
   };
-})();
+}());
 
 export default game;

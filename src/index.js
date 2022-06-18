@@ -16,7 +16,7 @@ function runGame(game) {
     game.initQuestion();
 
     console.log(`Question: ${game.getQuestion()}`);
-    const answer = getUserInput(`Your answer: `);
+    const answer = getUserInput('Your answer: ');
 
     const isAnswerCorrect = game.checkAnswer(answer);
 
@@ -25,7 +25,7 @@ function runGame(game) {
       correctAnswersCount += 1;
     } else {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${game.getCorrectAnswer()}'.`
+        `'${answer}' is wrong answer ;(. Correct answer was '${game.getCorrectAnswer()}'.`,
       );
       console.log(`Let's try again, ${name}!`);
       return;
