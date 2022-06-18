@@ -16,3 +16,15 @@ export function greet() {
   const name = getUserInput('May I have your name? ');
   console.log(`Hello, ${name}!`);
 }
+
+export function gcd(a, b) {
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+
+  return a + b;
+}
